@@ -2,16 +2,19 @@ import { FunctionComponent, memo } from "react";
 
 export type StatusBarIPhoneType = {
   className?: string;
+  cellularConnection?: string;
+  wifi?: string;
+  cap?: string;
 
   /** Variant props */
   background?: boolean;
 };
 
 const StatusBarIPhone: FunctionComponent<StatusBarIPhoneType> = memo(
-  ({ className = "", background = true }) => {
+  ({ className = "", background = true, cellularConnection, wifi, cap }) => {
     return (
       <div
-        className={`w-[393px] h-[50px] bg-Backgrounds-Primary flex flex-col items-start justify-start !pt-[21px] !pb-0 !pl-0 !pr-0 box-border z-[3] text-center text-[17px] text-Labels-Primary font-['Noto_Sans_JP'] ${className}`}
+        className={`w-[393px] h-[50px] bg-Backgrounds-Primary flex flex-col items-start justify-start !pt-[21px] !pb-0 !pl-0 !pr-0 box-border z-[3] text-center text-[17px] text-Labels-Primary font-noto-sans-jp data-[background='false']:bg-[unset] ${className}`}
         data-background={background}
       >
         <div className="self-stretch flex flex-row items-center justify-between gap-0">
@@ -24,13 +27,13 @@ const StatusBarIPhone: FunctionComponent<StatusBarIPhoneType> = memo(
               className="h-[12.2px] w-[19.2px] relative"
               loading="lazy"
               alt=""
-              src="/cellular-connection.svg"
+              src={cellularConnection}
             />
             <img
               className="h-[12.3px] w-[17.1px] relative"
               loading="lazy"
               alt=""
-              src="/wifi.svg"
+              src={wifi}
             />
             <div className="h-[13px] w-[27.3px] relative">
               <div className="absolute h-full top-[0%] bottom-[0%] left-[calc(50%_-_13.65px)] rounded-[4.3px] border-Labels-Primary border-solid border-[1px] box-border w-[25px] opacity-[0.35]" />
@@ -38,7 +41,7 @@ const StatusBarIPhone: FunctionComponent<StatusBarIPhoneType> = memo(
                 className="absolute h-[31.54%] top-[36.92%] bottom-[31.54%] left-[calc(50%_+_12.35px)] max-h-full w-[1.3px]"
                 loading="lazy"
                 alt=""
-                src="/cap.svg"
+                src={cap}
               />
               <div className="absolute h-[69.23%] top-[15.38%] bottom-[15.38%] left-[calc(50%_-_11.65px)] rounded-[2.5px] bg-Labels-Primary w-[21px]" />
             </div>

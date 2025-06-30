@@ -5,7 +5,8 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import StatusBarIPhone from "./components/StatusBarIPhone";
+import Component3 from "./pages/Component3";
+import E from "./pages/E";
 
 function App() {
   const action = useNavigationType();
@@ -27,6 +28,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/-e1":
+        title = "";
+        metaDescription = "";
+        break;
     }
 
     if (title) {
@@ -45,7 +50,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<StatusBarIPhone />} />
+      <Route path="/" element={<Component3 />} />
+      <Route path="/-e1" element={<E />} />
     </Routes>
   );
 }

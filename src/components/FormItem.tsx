@@ -1,7 +1,7 @@
 import { FunctionComponent, memo } from "react";
 import InputText from "./InputText";
 
-export type FormItemType = {
+export type FormItem1Type = {
   className?: string;
   label?: string;
   required?: boolean;
@@ -14,7 +14,7 @@ export type FormItemType = {
   supportingText?: string;
 };
 
-const FormItem: FunctionComponent<FormItemType> = memo(
+const FormItem1: FunctionComponent<FormItem1Type> = memo(
   ({
     className = "",
     supportingText = "N/A",
@@ -27,7 +27,7 @@ const FormItem: FunctionComponent<FormItemType> = memo(
   }) => {
     return (
       <div
-        className={`w-[361px] flex flex-col items-start justify-start gap-spacing-spacing-xs text-left text-sm text-fg-fg-secondary font-['Noto_Sans_TC'] ${className}`}
+        className={`w-[361px] flex flex-col items-start justify-start gap-spacing-spacing-xs text-left text-sm text-fg-fg-secondary font-noto-sans-tc ${className}`}
         data-supportingText={supportingText}
       >
         <div className="flex flex-row items-center justify-start gap-spacing-spacing-2xs">
@@ -46,4 +46,4 @@ const FormItem: FunctionComponent<FormItemType> = memo(
   }
 );
 
-export default FormItem;
+export default FormItem1;

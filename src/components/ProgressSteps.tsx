@@ -33,7 +33,7 @@ const ProgressSteps: FunctionComponent<ProgressStepsType> = memo(
   }) => {
     return (
       <div
-        className={`w-[361px] flex flex-row items-center justify-center text-center text-sm text-Backgrounds-Primary font-['Noto_Sans_TC'] ${className}`}
+        className={`w-[361px] flex flex-row items-center justify-center text-center text-sm text-bg-bg-primary font-noto-sans-tc ${className}`}
         data-step={step}
       >
         <StepLine

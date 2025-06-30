@@ -1,7 +1,7 @@
 import { FunctionComponent, memo } from "react";
 import CardLocationBrief from "./CardLocationBrief";
 
-export type FormItem1Type = {
+export type FormItemType = {
   className?: string;
   label?: string;
   required?: boolean;
@@ -13,7 +13,7 @@ export type FormItem1Type = {
   supportingText?: string;
 };
 
-const FormItem1: FunctionComponent<FormItem1Type> = memo(
+const FormItem: FunctionComponent<FormItemType> = memo(
   ({
     className = "",
     supportingText = "N/A",
@@ -25,7 +25,7 @@ const FormItem1: FunctionComponent<FormItem1Type> = memo(
   }) => {
     return (
       <div
-        className={`w-[361px] flex flex-col items-start justify-start gap-spacing-spacing-xs text-left text-sm text-fg-fg-secondary font-['Noto_Sans_TC'] ${className}`}
+        className={`w-[361px] flex flex-col items-start justify-start gap-spacing-spacing-xs text-left text-sm text-fg-fg-secondary font-noto-sans-tc ${className}`}
         data-supportingText={supportingText}
       >
         <div className="flex flex-row items-center justify-start gap-spacing-spacing-2xs">
@@ -43,4 +43,4 @@ const FormItem1: FunctionComponent<FormItem1Type> = memo(
   }
 );
 
-export default FormItem1;
+export default FormItem;

@@ -11,7 +11,7 @@ const PageControlDot: FunctionComponent<PageControlDotType> = memo(
   ({ className = "", state = "Active" }) => {
     return (
       <div
-        className={`w-2 relative h-2 data-[state='Active']:active:[&_.dot]:bg-bg-bg-brand-solid ${className}`}
+        className={`w-2 relative h-2 data-[state='Active']:active:[&_.dot]:bg-fg-fg-brand-secondary ${className}`}
         data-state={state}
       >
         <div className="dot absolute top-[calc(50%_-_4px)] left-[calc(50%_-_4px)] rounded-radius-radius-full bg-bg-bg-brand-solid w-2 h-2 overflow-hidden" />

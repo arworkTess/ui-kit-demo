@@ -15,10 +15,6 @@ export type CarouselType = {
   buttonArrowRightState?: string;
   buttonArrowLeftShow?: boolean;
   buttonArrowRightShow?: boolean;
-  buttonArrowLeftLineChevron1?: string;
-  buttonArrowRightLineChevron1?: string;
-  buttonArrowLeftLineChevron2?: string;
-  buttonArrowRightLineChevron2?: string;
   type?: string;
   supportingText1?: string;
 
@@ -40,16 +36,12 @@ const Carousel: FunctionComponent<CarouselType> = memo(
     buttonArrowRightState,
     buttonArrowLeftShow,
     buttonArrowRightShow,
-    buttonArrowLeftLineChevron1,
-    buttonArrowRightLineChevron1,
-    buttonArrowLeftLineChevron2,
-    buttonArrowRightLineChevron2,
     type,
     supportingText1,
   }) => {
     return (
       <div
-        className={`self-stretch flex flex-col items-center justify-center gap-spacing-spacing-xs text-left text-base text-fg-fg-primary font-['Noto_Sans_TC'] ${className}`}
+        className={`self-stretch flex flex-col items-center justify-center gap-spacing-spacing-xs text-left text-base text-fg-fg-primary font-noto-sans-tc ${className}`}
         data-supportingText={supportingText}
       >
         <div className="w-[361px] flex flex-row items-center justify-center gap-spacing-spacing-xl">
@@ -60,8 +52,7 @@ const Carousel: FunctionComponent<CarouselType> = memo(
             state={buttonArrowLeftState}
             showButton={buttonArrowLeftShow}
             lineChevronLeftBold="/line--chevronleftbold-1.svg"
-            lineChevronLeftBoldMaxHeight={buttonArrowLeftLineChevron1}
-            lineChevronLeftBoldOverflow={buttonArrowLeftLineChevron2}
+            lineChevronLeftBoldMaxHeight="unset"
           />
           <div className="flex flex-col items-center justify-start">
             <RewildTypeImage type={type} />
@@ -75,9 +66,8 @@ const Carousel: FunctionComponent<CarouselType> = memo(
             size={buttonArrowRightSize}
             state={buttonArrowRightState}
             showButton={buttonArrowRightShow}
-            lineChevronLeftBold="/line--chevronrightbold.svg"
-            lineChevronLeftBoldMaxHeight={buttonArrowRightLineChevron1}
-            lineChevronLeftBoldOverflow={buttonArrowRightLineChevron2}
+            lineChevronLeftBold="/line--chevronrightbold1.svg"
+            lineChevronLeftBoldMaxHeight="unset"
           />
         </div>
         <PageControl
