@@ -29,10 +29,6 @@ module.exports = {
         "spacing-spacing-none": "0px",
         "icon-sizing-icon-sizing-md": "24px",
       },
-      fontFamily: {
-        "sf-pro": "SF Pro",
-        "noto-sans-tc": "Noto Sans TC",
-      },
       borderRadius: {
         "radius-radius-full": "999px",
         "radius-radius-md": "8px",
