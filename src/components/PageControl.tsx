@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, memo } from "react";
 import PageControlDot from "./PageControlDot";
 
 export type PageControlType = {
@@ -14,29 +14,31 @@ export type PageControlType = {
   supportingText?: string;
 };
 
-const PageControl: FunctionComponent<PageControlType> = ({
-  className = "",
-  supportingText = "N/A",
-  pageControlDotState,
-  pageControlDotState1,
-  pageControlDotState2,
-  pageControlDotState3,
-  pageControlDotState4,
-  pageControlDotState5,
-}) => {
-  return (
-    <div
-      className={`flex flex-row items-center justify-center !pt-spacing-spacing-md !pb-spacing-spacing-md !pl-spacing-spacing-xl !pr-spacing-spacing-xl gap-spacing-spacing-xs ${className}`}
-      data-supportingText={supportingText}
-    >
-      <PageControlDot state={pageControlDotState} />
-      <PageControlDot state={pageControlDotState1} />
-      <PageControlDot state={pageControlDotState2} />
-      <PageControlDot state={pageControlDotState3} />
-      <PageControlDot state={pageControlDotState4} />
-      <PageControlDot state={pageControlDotState5} />
-    </div>
-  );
-};
+const PageControl: FunctionComponent<PageControlType> = memo(
+  ({
+    className = "",
+    supportingText = "N/A",
+    pageControlDotState,
+    pageControlDotState1,
+    pageControlDotState2,
+    pageControlDotState3,
+    pageControlDotState4,
+    pageControlDotState5,
+  }) => {
+    return (
+      <div
+        className={`flex flex-row items-center justify-center !pt-spacing-spacing-md !pb-spacing-spacing-md !pl-spacing-spacing-xl !pr-spacing-spacing-xl gap-spacing-spacing-xs ${className}`}
+        data-supportingText={supportingText}
+      >
+        <PageControlDot state={pageControlDotState} />
+        <PageControlDot state={pageControlDotState1} />
+        <PageControlDot state={pageControlDotState2} />
+        <PageControlDot state={pageControlDotState3} />
+        <PageControlDot state={pageControlDotState4} />
+        <PageControlDot state={pageControlDotState5} />
+      </div>
+    );
+  }
+);
 
 export default PageControl;

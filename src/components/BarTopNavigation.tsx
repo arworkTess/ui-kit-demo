@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, memo } from "react";
 import Button1 from "./Button1";
 
 export type BarTopNavigationType = {
@@ -26,58 +26,60 @@ export type BarTopNavigationType = {
   background?: boolean;
 };
 
-const BarTopNavigation: FunctionComponent<BarTopNavigationType> = ({
-  className = "",
-  background = false,
-  leading = true,
-  trailing = false,
-  title = "建立行程",
-  showTitle = true,
-  buttonHierarchy,
-  buttonHierarchy1,
-  buttonIconOnly,
-  buttonIconOnly1,
-  buttonSize,
-  buttonSize1,
-  buttonState,
-  buttonState1,
-  buttonShow,
-  buttonShow1,
-  buttonLineChevronLeftBoldMax,
-  buttonLineChevronLeftBoldMax1,
-  buttonLineChevronLeftBoldOverflow,
-  buttonLineChevronLeftBoldOverflow1,
-}) => {
-  return (
-    <div
-      className={`w-[393px] h-[60px] [backdrop-filter:blur(20px)] [background:linear-gradient(180deg,_#fff,_rgba(255,_255,_255,_0))] border-border-border-white border-solid border-b-[1px] box-border flex flex-row items-center justify-center !pt-spacing-spacing-sm !pb-spacing-spacing-sm !pl-spacing-spacing-md !pr-spacing-spacing-md gap-spacing-spacing-sm text-left text-base text-fg-fg-secondary font-noto-sans-tc ${className}`}
-      data-background={background}
-    >
-      <Button1
-        hierarchy={buttonHierarchy}
-        iconOnly={buttonIconOnly}
-        size={buttonSize}
-        state={buttonState}
-        showButton={buttonShow}
-        lineChevronLeftBold="/line--chevronleftbold.svg"
-        lineChevronLeftBoldMaxHeight={buttonLineChevronLeftBoldMax}
-        lineChevronLeftBoldOverflow={buttonLineChevronLeftBoldOverflow}
-      />
-      <div className="flex-1 flex flex-row items-center justify-start">
-        {!!showTitle && <b className="relative leading-6">{title}</b>}
+const BarTopNavigation: FunctionComponent<BarTopNavigationType> = memo(
+  ({
+    className = "",
+    background = false,
+    leading = true,
+    trailing = false,
+    title = "建立行程",
+    showTitle = true,
+    buttonHierarchy,
+    buttonHierarchy1,
+    buttonIconOnly,
+    buttonIconOnly1,
+    buttonSize,
+    buttonSize1,
+    buttonState,
+    buttonState1,
+    buttonShow,
+    buttonShow1,
+    buttonLineChevronLeftBoldMax,
+    buttonLineChevronLeftBoldMax1,
+    buttonLineChevronLeftBoldOverflow,
+    buttonLineChevronLeftBoldOverflow1,
+  }) => {
+    return (
+      <div
+        className={`w-[393px] h-[60px] [backdrop-filter:blur(20px)] [background:linear-gradient(180deg,_#fff,_rgba(255,_255,_255,_0))] border-border-border-white border-solid border-b-[1px] box-border flex flex-row items-center justify-center !pt-spacing-spacing-sm !pb-spacing-spacing-sm !pl-spacing-spacing-md !pr-spacing-spacing-md gap-spacing-spacing-sm text-left text-base text-fg-fg-secondary font-['Noto_Sans_TC'] ${className}`}
+        data-background={background}
+      >
+        <Button1
+          hierarchy={buttonHierarchy}
+          iconOnly={buttonIconOnly}
+          size={buttonSize}
+          state={buttonState}
+          showButton={buttonShow}
+          lineChevronLeftBold="/line--chevronleftbold.svg"
+          lineChevronLeftBoldMaxHeight={buttonLineChevronLeftBoldMax}
+          lineChevronLeftBoldOverflow={buttonLineChevronLeftBoldOverflow}
+        />
+        <div className="flex-1 flex flex-row items-center justify-start">
+          {!!showTitle && <b className="relative leading-6">{title}</b>}
+        </div>
+        <Button1
+          hierarchy={buttonHierarchy1}
+          iconOnly={buttonIconOnly1}
+          size={buttonSize1}
+          state={buttonState1}
+          showButton={buttonShow1}
+          lineChevronLeftBold="pending_I918:6403;918:5858;326:10318"
+          lineChevronLeftBoldMaxHeight={buttonLineChevronLeftBoldMax1}
+          lineChevronLeftBoldOverflow={buttonLineChevronLeftBoldOverflow1}
+        />
       </div>
-      <Button1
-        hierarchy={buttonHierarchy1}
-        iconOnly={buttonIconOnly1}
-        size={buttonSize1}
-        state={buttonState1}
-        showButton={buttonShow1}
-        lineChevronLeftBold="pending_I918:6403;918:5858;326:10318"
-        lineChevronLeftBoldMaxHeight={buttonLineChevronLeftBoldMax1}
-        lineChevronLeftBoldOverflow={buttonLineChevronLeftBoldOverflow1}
-      />
-    </div>
-  );
-};
+    );
+  }
+);
 
 export default BarTopNavigation;

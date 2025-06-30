@@ -1,4 +1,4 @@
-import { FunctionComponent, useMemo, type CSSProperties } from "react";
+import { FunctionComponent, memo, useMemo, type CSSProperties } from "react";
 
 export type Button1Type = {
   className?: string;
@@ -16,41 +16,43 @@ export type Button1Type = {
   lineChevronLeftBoldOverflow?: CSSProperties["overflow"];
 };
 
-const Button1: FunctionComponent<Button1Type> = ({
-  className = "",
-  hierarchy = "Primary",
-  iconOnly = false,
-  size = "md",
-  state = "Default",
-  showButton,
-  lineChevronLeftBold,
-  lineChevronLeftBoldMaxHeight,
-  lineChevronLeftBoldOverflow,
-}) => {
-  const lineChevronLeftBoldStyle: CSSProperties = useMemo(() => {
-    return {
-      maxHeight: lineChevronLeftBoldMaxHeight,
-      overflow: lineChevronLeftBoldOverflow,
-    };
-  }, [lineChevronLeftBoldMaxHeight, lineChevronLeftBoldOverflow]);
+const Button1: FunctionComponent<Button1Type> = memo(
+  ({
+    className = "",
+    hierarchy = "Primary",
+    iconOnly = false,
+    size = "md",
+    state = "Default",
+    showButton,
+    lineChevronLeftBold,
+    lineChevronLeftBoldMaxHeight,
+    lineChevronLeftBoldOverflow,
+  }) => {
+    const lineChevronLeftBoldStyle: CSSProperties = useMemo(() => {
+      return {
+        maxHeight: lineChevronLeftBoldMaxHeight,
+        overflow: lineChevronLeftBoldOverflow,
+      };
+    }, [lineChevronLeftBoldMaxHeight, lineChevronLeftBoldOverflow]);
 
-  return (
-    <div
-      className={`rounded-radius-radius-full flex flex-row items-center justify-center !p-spacing-spacing-xs data-[hierarchy='Secondary']:data-[iconOnly='true']:data-[size='md']:data-[state='Default']:!p-3 data-[hierarchy='Secondary']:data-[iconOnly='true']:data-[size='md']:data-[state='Default']:shadow-[0px_2px_8px_rgba(0,_0,_0,_0.05),_0px_1px_2px_rgba(0,_0,_0,_0.05)] data-[hierarchy='Secondary']:data-[iconOnly='true']:data-[size='md']:data-[state='Default']:bg-Backgrounds-Primary data-[hierarchy='Secondary']:data-[iconOnly='true']:data-[size='md']:data-[state='Default']:[&_.line-chevron-left-bold]:h-6 data-[hierarchy='Secondary']:data-[iconOnly='true']:data-[size='md']:data-[state='Default']:[&_.line-chevron-left-bold]:w-6 ${className}`}
-      data-hierarchy={hierarchy}
-      data-iconOnly={iconOnly}
-      data-size={size}
-      data-state={state}
-    >
-      <img
-        className="line-chevron-left-bold h-icon-sizing-icon-sizing-sm w-5 relative"
-        loading="lazy"
-        alt=""
-        src={lineChevronLeftBold}
-        style={lineChevronLeftBoldStyle}
-      />
-    </div>
-  );
-};
+    return (
+      <div
+        className={`rounded-radius-radius-full flex flex-row items-center justify-center !p-spacing-spacing-xs data-[hierarchy='Secondary']:data-[iconOnly='true']:data-[size='md']:data-[state='Default']:!p-3 data-[hierarchy='Secondary']:data-[iconOnly='true']:data-[size='md']:data-[state='Default']:shadow-[0px_2px_8px_rgba(0,_0,_0,_0.05),_0px_1px_2px_rgba(0,_0,_0,_0.05)] data-[hierarchy='Secondary']:data-[iconOnly='true']:data-[size='md']:data-[state='Default']:bg-Backgrounds-Primary data-[hierarchy='Secondary']:data-[iconOnly='true']:data-[size='md']:data-[state='Default']:[&_.line-chevron-left-bold]:h-6 data-[hierarchy='Secondary']:data-[iconOnly='true']:data-[size='md']:data-[state='Default']:[&_.line-chevron-left-bold]:w-6 ${className}`}
+        data-hierarchy={hierarchy}
+        data-iconOnly={iconOnly}
+        data-size={size}
+        data-state={state}
+      >
+        <img
+          className="line-chevron-left-bold h-icon-sizing-icon-sizing-sm w-5 relative"
+          loading="lazy"
+          alt=""
+          src={lineChevronLeftBold}
+          style={lineChevronLeftBoldStyle}
+        />
+      </div>
+    );
+  }
+);
 
 export default Button1;
